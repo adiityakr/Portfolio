@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Pokédex Portfolio — Dark Futuristic Pokémon-themed Developer Showcase">
+  <!-- ==========================================
+       EDIT YOUR DETAILS HERE: PAGE TITLE
+       ========================================== -->
+  <title>[YOUR NAME] — POKÉDEX SYSTEM v2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. OPENING INTRO OVERLAY (CSS-ONLY ANIMATION)
+       Runs for ~5.5s then fades to opacity 0 with pointer-events: none.
+       Skip link is functional immediately.
+       ========================================== -->
+  <section id="intro" class="intro-overlay" aria-label="System Boot Sequence">
+    <a href="#main-portfolio" class="skip-intro">Skip Intro ⟶</a>
+    <div class="intro-particles" aria-hidden="true"></div>
+    <div class="intro-horizon" aria-hidden="true"></div>
+
+    <div class="intro-stage" aria-hidden="true">
+      <!-- Pure CSS Trainer Silhouette on Left -->
+      <div class="trainer-silhouette">
+        <div class="silhouette-cap"></div>
+        <div class="silhouette-head"></div>
+        <div class="silhouette-collar"></div>
+        <div class="silhouette-torso"></div>
+        <div class="silhouette-arm"></div>
+        <div class="silhouette-hand"></div>
+        <div class="silhouette-legs"></div>
+        <div class="silhouette-shadow"></div>
+      </div>
+
+      <!-- Intro Tagline -->
+      <p class="intro-quote">"Every journey starts with a single throw."</p>
+
+      <!-- Poké Ball Arc Flight & Split Halves -->
+      <div class="intro-ball-flight">
+        <div class="intro-ball-shell">
+          <div class="intro-ball-top"></div>
+          <div class="intro-ball-belt"></div>
+          <div class="intro-ball-button"></div>
+          <div class="intro-ball-bottom"></div>
+        </div>
+      </div>
+
+      <!-- Energy Expansion Flash & Initialized Banner -->
+      <div class="intro-flash"></div>
+      <div class="intro-init-badge">
+        <span class="intro-init-icon">⚡</span>
+        <span class="intro-init-text">POKÉDEX INITIALIZED</span>
+        <span class="intro-init-sub">TRAINER DATABASE ONLINE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       2. MAIN LAYOUT CONTAINER (CSS GRID)
+       [sidebar: 240px] [main-content: 1fr]
+       ========================================== -->
+  <div id="main-portfolio" class="pokedex-layout">
+
+    <!-- ==========================================
+         3. LEFT SIDEBAR (FIXED NAVIGATION)
+         ========================================== -->
+    <aside class="pokedex-sidebar" aria-label="Trainer Navigation">
+      <div class="sidebar-scanner-beam" aria-hidden="true"></div>
+
+      <!-- Top: Poké Ball Logo -->
+      <div class="sidebar-brand-box">
+        <div class="pokeball" aria-hidden="true"></div>
+        <div class="sidebar-brand-info">
+          <span class="brand-system-name">POKÉDEX</span>
+          <span class="brand-version-tag">SYSTEM v2.0</span>
+        </div>
+      </div>
+
+      <!-- Trainer Avatar Card -->
+      <!-- ==========================================
+           EDIT YOUR DETAILS HERE: SIDEBAR PROFILE
+           ========================================== -->
+      <div class="sidebar-trainer-card">
+        <div class="trainer-avatar-wrapper">
+          <div class="trainer-avatar-graphic">
+            <span class="avatar-initials">[YN]</span>
+          </div>
+          <div class="avatar-reticle" aria-hidden="true"></div>
+        </div>
+        <div class="sidebar-trainer-info">
+          <h2 class="sidebar-trainer-name">[YOUR NAME]</h2>
+          <div class="sidebar-meta-badges">
+            <span class="meta-pill id-pill">ID: #000001</span>
+            <span class="meta-pill region-pill">[YOUR REGION]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav Links (Anchor Links to Sections) -->
+      <nav class="sidebar-nav" aria-label="Main Navigation">
+        <ul class="sidebar-nav-menu">
+          <li><a href="#trainer-profile" class="sidebar-nav-link"><span class="nav-icon">👤</span><span class="nav-text">Trainer Profile</span></a></li>
+          <li><a href="#pokedex" class="sidebar-nav-link"><span class="nav-icon">📋</span><span class="nav-text">Personal Pokédex</span></a></li>
+          <li><a href="#abilities" class="sidebar-nav-link"><span class="nav-icon">⚡</span><span class="nav-text">Abilities &amp; Moves</span></a></li>
+          <li><a href="#quests" class="sidebar-nav-link"><span class="nav-icon">🗺️</span><span class="nav-text">Quests &amp; Projects</span></a></li>
+          <li><a href="#badges" class="sidebar-nav-link"><span class="nav-icon">🏅</span><span class="nav-text">Achievement Badges</span></a></li>
+          <li><a href="#contact" class="sidebar-nav-link"><span class="nav-icon">📡</span><span class="nav-text">Comm Terminal</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Status Chip -->
+      <div class="sidebar-footer-status">
+        <div class="link-state-chip">
+          <span class="state-dot live" aria-hidden="true"></span>
+          <span class="state-text">UPLINK: ACTIVE</span>
+        </div>
+        <div class="sidebar-sub-telemetry">SEC PROTOCOL // KANTO-NET</div>
+      </div>
+    </aside>
+
+    <!-- ==========================================
+         MAIN CONTENT AREA
+         ========================================== -->
+    <main class="pokedex-viewport">
+
+      <!-- ==========================================
+           4. TOP STATUS BAR
+           ========================================== -->
+      <header class="top-status-bar" role="banner">
+        <div class="status-brand-group">
+          <div class="pokeball status-pokeball-mini" aria-hidden="true"></div>
+          <div class="status-brand-titles">
+            <span class="bar-headline">POKÉDEX SYSTEM v2.0</span>
+            <span class="bar-subline">TRAINER DATABASE — ONLINE</span>
+          </div>
+        </div>
+
+        <div class="status-center-group">
+          <div class="pulse-indicator">
+            <span class="pulse-green-dot" aria-hidden="true"></span>
+            <span class="pulse-label">TRAINER DATABASE — ONLINE</span>
+          </div>
+        </div>
+
+        <div class="status-stats-group">
+          <div class="status-chip"><span class="chip-key">TRAINER ID:</span> <span class="chip-val">#000001</span></div>
+          <div class="status-chip highlight-chip"><span class="chip-key">STATUS:</span> <span class="chip-val">SYNCED</span></div>
+        </div>
+      </header>
+
+      <!-- CONTENT SECTIONS -->
+      <div class="sections-container">
+
+        <!-- ==========================================
+             5. TRAINER PROFILE SECTION
+             id="trainer-profile"
+             EDIT YOUR DETAILS HERE: PROFILE & BIO
+             ========================================== -->
+        <section id="trainer-profile" class="portfolio-section section-profile">
+          <div class="section-top-indicator">SYSTEM ENTRY // FILE_000_TRAINER</div>
+
+          <div class="profile-layout-grid">
+            <div class="profile-info-column">
+              <div class="profile-headings">
+                <span class="eyebrow-tag">OFFICIAL CLASSIFICATION</span>
+                <h1 class="trainer-name-hero">[YOUR NAME]</h1>
+                <p class="trainer-role-hero">[YOUR COURSE / PROFESSIONAL TITLE]</p>
+              </div>
+
+              <p class="trainer-bio-paragraph">
+                [YOUR INTRODUCTION — A short paragraph about yourself, your goals, and what you're passionate about.]
+              </p>
+
+              <!-- Pokédex Data Fields Card -->
+              <div class="pokedex-registry-card">
+                <div class="card-corner-notch" aria-hidden="true"></div>
+                <div class="registry-card-header">
+                  <span class="registry-header-title">OFFICIAL TRAINER REGISTRY</span>
+                  <span class="registry-header-badge">VERIFIED</span>
+                </div>
+                <dl class="registry-data-list">
+                  <div class="registry-data-row"><dt class="data-label">NAME:</dt><dd class="data-value">[YOUR NAME]</dd></div>
+                  <div class="registry-data-row"><dt class="data-label">TRAINER CLASS:</dt><dd class="data-value">[YOUR CLASS / ROLE]</dd></div>
+                  <div class="registry-data-row"><dt class="data-label">HOMETOWN:</dt><dd class="data-value">[YOUR HOMETOWN]</dd></div>
+                  <div class="registry-data-row"><dt class="data-label">STARTER:</dt><dd class="data-value highlight-cyan">[YOUR FAVOURITE POKÉMON]</dd></div>
+                  <div class="registry-data-row"><dt class="data-label">STATUS:</dt><dd class="data-value highlight-green">ACTIVE</dd></div>
+                </dl>
+              </div>
+
+              <div class="profile-action-bar">
+                <a href="#pokedex" class="cyber-btn btn-primary"><span class="btn-symbol">📋</span><span>View My Pokédex</span><span class="btn-arrow">⟶</span></a>
+                <a href="#contact" class="cyber-btn btn-secondary"><span class="btn-symbol">📡</span><span>Open Comms</span></a>
+              </div>
+            </div>
+
+            <!-- Styled CSS Portrait Placeholder -->
+            <div class="profile-portrait-column">
+              <div class="portrait-display-frame">
+                <div class="portrait-radar-circle" aria-hidden="true"></div>
+                <div class="portrait-inner-hex">
+                  <div class="portrait-silhouette-art" aria-hidden="true"></div>
+                  <div class="portrait-caption-box">
+                    <span class="portrait-main-label">TRAINER PORTRAIT</span>
+                    <span class="portrait-hint">[IMAGE PLACEHOLDER // 1:1]</span>
+                  </div>
+                </div>
+                <div class="portrait-hud-status">
+                  <span class="hud-tag">REC // LIVE</span>
+                  <span class="hud-tag">HUD-SYNC 100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             6. PERSONAL POKÉDEX SECTION
+             id="pokedex"
+             EDIT YOUR DETAILS HERE: POKÉDEX DATA
+             ========================================== -->
+        <section id="pokedex" class="portfolio-section section-pokedex">
+          <div class="section-scanline-laser" aria-hidden="true"></div>
+
+          <div class="section-header-block">
+            <div class="header-title-meta">
+              <span class="header-code-index">#001</span>
+              <div>
+                <h2 class="section-main-heading">PERSONAL POKÉDEX</h2>
+                <p class="section-sub-heading">STANDARDIZED TRAINER ENTRY SPECIFICATIONS</p>
+              </div>
+            </div>
+            <div class="header-indicator-pill">
+              <span class="indicator-blink-dot" aria-hidden="true"></span>
+              <span>INDEX SYNCHRONIZED</span>
+            </div>
+          </div>
+
+          <!-- Two-column Grid of Data Panels -->
+          <div class="pokedex-panels-grid">
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">👤</span><span class="panel-label">FULL NAME</span><span class="panel-index">DAT-01</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[YOUR FULL NAME]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">REGISTRY VERIFIED</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🏛️</span><span class="panel-label">EDUCATION</span><span class="panel-index">DAT-02</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[YOUR UNIVERSITY / SCHOOL]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">ACCREDITED FACILITY</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🎓</span><span class="panel-label">CURRENT YEAR</span><span class="panel-index">DAT-03</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[YEAR OF STUDY / GRADUATION YEAR]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">IN PROGRESS</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🔬</span><span class="panel-label">MAJOR</span><span class="panel-index">DAT-04</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[YOUR MAJOR / FIELD OF STUDY]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">PRIMARY CONCENTRATION</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🎯</span><span class="panel-label">AREAS OF INTEREST</span><span class="panel-index">DAT-05</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[INTEREST 1] · [INTEREST 2] · [INTEREST 3]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">SPECIALIZATIONS</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">📍</span><span class="panel-label">HOMETOWN</span><span class="panel-index">DAT-06</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[YOUR HOMETOWN]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">ORIGIN COORDINATES</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🎮</span><span class="panel-label">HOBBIES</span><span class="panel-index">DAT-07</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[HOBBY 1] · [HOBBY 2] · [HOBBY 3]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">FIELD INTERESTS</span></div>
+            </div>
+
+            <div class="pokedex-data-panel">
+              <div class="panel-top-meta"><span class="panel-icon-tag">🌐</span><span class="panel-label">LANGUAGES</span><span class="panel-index">DAT-08</span></div>
+              <div class="panel-main-content"><div class="panel-value-text">[LANGUAGE 1] · [LANGUAGE 2]</div></div>
+              <div class="panel-bottom-bar"><span class="status-micro-dot"></span><span class="bottom-bar-status">COMM PROTOCOLS</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             7. ABILITIES & MOVES SECTION
+             id="abilities"
+             EDIT YOUR DETAILS HERE: SKILLS & PROFICIENCIES
+             ========================================== -->
+        <section id="abilities" class="portfolio-section section-abilities">
+          <div class="section-header-block">
+            <div class="header-title-meta">
+              <span class="header-code-index">#002</span>
+              <div>
+                <h2 class="section-main-heading">ABILITIES &amp; MOVES</h2>
+                <p class="section-sub-heading">TECHNICAL ARSENAL, COMBAT STATS &amp; PROFICIENCIES</p>
+              </div>
+            </div>
+            <div class="type-legend-bar">
+              <span class="legend-type-chip type-programming">ELECTRIC</span>
+              <span class="legend-type-chip type-technical">FIRE</span>
+              <span class="legend-type-chip type-creative">PSYCHIC</span>
+              <span class="legend-type-chip type-communication">GRASS</span>
+              <span class="legend-type-chip type-problem-solving">WATER</span>
+            </div>
+          </div>
+
+          <!-- Skills Grid (2-3 columns desktop, 1 mobile) -->
+          <div class="skills-catalog-grid">
+            <!-- 1. Programming -->
+            <div class="skill-move-card type-programming">
+              <div class="move-card-header"><h3 class="move-name">[PYTHON &amp; CORE ARCHITECTURE]</h3><span class="type-badge-pill badge-programming">PROGRAMMING</span></div>
+              <p class="move-description">[Backend services, algorithmic computation, object-oriented design patterns, and asynchronous routines.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">85%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-programming" style="width: 85%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 2. Programming -->
+            <div class="skill-move-card type-programming">
+              <div class="move-card-header"><h3 class="move-name">[FRONTEND &amp; UI SYSTEMS]</h3><span class="type-badge-pill badge-programming">PROGRAMMING</span></div>
+              <p class="move-description">[HTML5 semantics, modern CSS3 layout engines, state synchronization, and DOM tree optimizations.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">80%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-programming" style="width: 80%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 3. Technical -->
+            <div class="skill-move-card type-technical">
+              <div class="move-card-header"><h3 class="move-name">[DOCKER &amp; CLOUD DEPLOYMENTS]</h3><span class="type-badge-pill badge-technical">TECHNICAL</span></div>
+              <p class="move-description">[Containerized environments, continuous integration, microservice deployment, and Linux host tuning.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">75%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-technical" style="width: 75%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 4. Technical -->
+            <div class="skill-move-card type-technical">
+              <div class="move-card-header"><h3 class="move-name">[RELATIONAL SQL &amp; SCHEMAS]</h3><span class="type-badge-pill badge-technical">TECHNICAL</span></div>
+              <p class="move-description">[PostgreSQL schema modeling, query indexing, ACID consistency guarantees, and transaction management.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">70%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-technical" style="width: 70%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 5. Creative -->
+            <div class="skill-move-card type-creative">
+              <div class="move-card-header"><h3 class="move-name">[UI/UX DESIGN &amp; MOTION]</h3><span class="type-badge-pill badge-creative">CREATIVE</span></div>
+              <p class="move-description">[Figma design systems, cyber visual interfaces, user journey flows, and smooth interactive animations.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">85%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-creative" style="width: 85%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 6. Creative -->
+            <div class="skill-move-card type-creative">
+              <div class="move-card-header"><h3 class="move-name">[3D ASSETS &amp; BRANDING]</h3><span class="type-badge-pill badge-creative">CREATIVE</span></div>
+              <p class="move-description">[Vector asset design, 3D mechanical renders, visual identity guidelines, and multimedia presentation.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">65%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-creative" style="width: 65%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 7. Communication -->
+            <div class="skill-move-card type-communication">
+              <div class="move-card-header"><h3 class="move-name">[TECHNICAL DOCUMENTATION]</h3><span class="type-badge-pill badge-communication">COMMUNICATION</span></div>
+              <p class="move-description">[Comprehensive developer manuals, architectural RFCs, public engineering talks, and release logs.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">90%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-communication" style="width: 90%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 8. Communication -->
+            <div class="skill-move-card type-communication">
+              <div class="move-card-header"><h3 class="move-name">[COLLABORATIVE LEADERSHIP]</h3><span class="type-badge-pill badge-communication">COMMUNICATION</span></div>
+              <p class="move-description">[Agile sprint planning, peer code reviews, junior engineer mentoring, and stakeholder roadmapping.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">80%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-communication" style="width: 80%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 9. Problem Solving -->
+            <div class="skill-move-card type-problem-solving">
+              <div class="move-card-header"><h3 class="move-name">[ALGORITHMIC OPTIMIZATION]</h3><span class="type-badge-pill badge-problem-solving">PROBLEM SOLVING</span></div>
+              <p class="move-description">[Big-O complexity profiling, dynamic programming techniques, graph search traversal, and memory tuning.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">85%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-problem-solving" style="width: 85%;"></div></div>
+              </div>
+            </div>
+
+            <!-- 10. Problem Solving -->
+            <div class="skill-move-card type-problem-solving">
+              <div class="move-card-header"><h3 class="move-name">[SECURITY AUDIT &amp; DEBUG]</h3><span class="type-badge-pill badge-problem-solving">PROBLEM SOLVING</span></div>
+              <p class="move-description">[Vulnerability assessments, network traffic packet tracing, stack dump analysis, and resilient failover.]</p>
+              <div class="move-proficiency-box">
+                <div class="proficiency-stats-row"><span class="stat-name">POWER LEVEL</span><span class="stat-val">75%</span></div>
+                <div class="proficiency-track"><div class="proficiency-fill fill-problem-solving" style="width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             8. QUESTS & PROJECTS SECTION
+             id="quests"
+             EDIT YOUR DETAILS HERE: PROJECTS
+             ========================================== -->
+        <section id="quests" class="portfolio-section section-quests">
+          <div class="section-header-block">
+            <div class="header-title-meta">
+              <span class="header-code-index">#003</span>
+              <div>
+                <h2 class="section-main-heading">QUEST LOG</h2>
+                <p class="section-sub-heading">ACTIVE FIELD MISSIONS, EXPERIMENTAL PROJECTS &amp; CODEBASES</p>
+              </div>
+            </div>
+            <div class="header-indicator-pill"><span class="quest-count-badge">3 QUESTS LOGGED</span></div>
+          </div>
+
+          <div class="quests-deck">
+            <!-- Quest 1 -->
+            <article class="quest-entry-card">
+              <div class="quest-accent-stripe" aria-hidden="true"></div>
+              <div class="quest-card-content">
+                <div class="quest-header-meta">
+                  <span class="quest-id-badge">QUEST #001</span>
+                  <span class="quest-status-badge status-completed">COMPLETED</span>
+                </div>
+                <h3 class="quest-title-text">[PROJECT TITLE 1 — DISTRIBUTED POKÉ-AGENT NETWORK]</h3>
+                <p class="quest-summary">[Project description — what you built, why, and what you learned. An asynchronous multi-agent coordination protocol engineered for telemetry logging and high-frequency real-time analysis.]</p>
+                <div class="quest-tech-stack">
+                  <span class="tech-tag-chip">[PYTHON 3.12]</span>
+                  <span class="tech-tag-chip">[ASYNCIO]</span>
+                  <span class="tech-tag-chip">[REDIS PUBSUB]</span>
+                  <span class="tech-tag-chip">[DOCKER]</span>
+                </div>
+                <details class="quest-accordion">
+                  <summary class="accordion-summary"><span class="summary-arrow">▶</span><span>View Details</span></summary>
+                  <div class="accordion-drawer">
+                    <div class="drawer-field"><span class="drawer-key">OBJECTIVES MET:</span><p class="drawer-val">[Engineered non-blocking socket pipelines ingesting 25,000 metrics/sec across 16 simulation workers.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">CHALLENGE OVERCOME:</span><p class="drawer-val">[Resolved race conditions during state reconciliation by integrating vector clocks and atomic hash ring operations.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">EXP GAINED:</span><p class="drawer-val">[+500 XP in Distributed Systems Architecture, Fault Recovery, and Asynchronous Concurrency Benchmarking.]</p></div>
+                  </div>
+                </details>
+                <div class="quest-action-links">
+                  <!-- EDIT LINKS BELOW: Replace # with your real URLs -->
+                  <a href="#" class="quest-link-btn" title="View Source on GitHub">[ GitHub → ]</a>
+                  <a href="#" class="quest-link-btn btn-highlight" title="Launch Live Demo">[ Live Demo → ]</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Quest 2 -->
+            <article class="quest-entry-card">
+              <div class="quest-accent-stripe" aria-hidden="true"></div>
+              <div class="quest-card-content">
+                <div class="quest-header-meta">
+                  <span class="quest-id-badge">QUEST #002</span>
+                  <span class="quest-status-badge status-in-progress">IN PROGRESS</span>
+                </div>
+                <h3 class="quest-title-text">[PROJECT TITLE 2 — NEURAL POKÉDEX VISION SCANNER]</h3>
+                <p class="quest-summary">[Project description — what you built, why, and what you learned. An on-device edge computer vision system that classifies biological species from live camera feed streams with low latency.]</p>
+                <div class="quest-tech-stack">
+                  <span class="tech-tag-chip">[PYTORCH]</span>
+                  <span class="tech-tag-chip">[OPENCV]</span>
+                  <span class="tech-tag-chip">[WEBRTC]</span>
+                  <span class="tech-tag-chip">[TYPESCRIPT]</span>
+                </div>
+                <details class="quest-accordion">
+                  <summary class="accordion-summary"><span class="summary-arrow">▶</span><span>View Details</span></summary>
+                  <div class="accordion-drawer">
+                    <div class="drawer-field"><span class="drawer-key">OBJECTIVES MET:</span><p class="drawer-val">[Trained a compact Vision Transformer on 50,000 domain images with 94.2% top-1 validation accuracy.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">CHALLENGE OVERCOME:</span><p class="drawer-val">[Applied post-training weight quantization down to 8-bit integers to execute real-time inference within browser WebAssembly.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">EXP GAINED:</span><p class="drawer-val">[+650 XP in Deep Learning Deployment, Edge Model Quantization, and Canvas Real-time Pipelines.]</p></div>
+                  </div>
+                </details>
+                <div class="quest-action-links">
+                  <!-- EDIT LINKS BELOW: Replace # with your real URLs -->
+                  <a href="#" class="quest-link-btn" title="View Source on GitHub">[ GitHub → ]</a>
+                  <a href="#" class="quest-link-btn btn-highlight" title="Launch Live Demo">[ Live Demo → ]</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Quest 3 -->
+            <article class="quest-entry-card">
+              <div class="quest-accent-stripe" aria-hidden="true"></div>
+              <div class="quest-card-content">
+                <div class="quest-header-meta">
+                  <span class="quest-id-badge">QUEST #003</span>
+                  <span class="quest-status-badge status-archived">ARCHIVED</span>
+                </div>
+                <h3 class="quest-title-text">[PROJECT TITLE 3 — CYBERNETIC HABIT &amp; QUEST TRACKER]</h3>
+                <p class="quest-summary">[Project description — what you built, why, and what you learned. A futuristic productivity progressive web application treating developer skill trees as RPG combat moves with offline storage.]</p>
+                <div class="quest-tech-stack">
+                  <span class="tech-tag-chip">[HTML5 / CSS3]</span>
+                  <span class="tech-tag-chip">[INDEXEDDB]</span>
+                  <span class="tech-tag-chip">[SERVICE WORKERS]</span>
+                  <span class="tech-tag-chip">[WEB AUDIO]</span>
+                </div>
+                <details class="quest-accordion">
+                  <summary class="accordion-summary"><span class="summary-arrow">▶</span><span>View Details</span></summary>
+                  <div class="accordion-drawer">
+                    <div class="drawer-field"><span class="drawer-key">OBJECTIVES MET:</span><p class="drawer-val">[Designed an offline-first responsive PWA with zero framework dependencies, achieving 100/100 Lighthouse performance.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">CHALLENGE OVERCOME:</span><p class="drawer-val">[Structured a synthesized Web Audio soundboard engine mimicking 8-bit gameboy retro chiptunes using oscillators.]</p></div>
+                    <div class="drawer-field"><span class="drawer-key">EXP GAINED:</span><p class="drawer-val">[+400 XP in Vanilla Web API Mastery, Audio Synthesizer Graphs, and Offline Data Synchronization.]</p></div>
+                  </div>
+                </details>
+                <div class="quest-action-links">
+                  <!-- EDIT LINKS BELOW: Replace # with your real URLs -->
+                  <a href="#" class="quest-link-btn" title="View Source on GitHub">[ GitHub → ]</a>
+                  <a href="#" class="quest-link-btn btn-highlight" title="Launch Live Demo">[ Live Demo → ]</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             9. ACHIEVEMENT BADGES SECTION
+             id="badges"
+             EDIT YOUR DETAILS HERE: BADGES
+             ========================================== -->
+        <section id="badges" class="portfolio-section section-badges">
+          <div class="section-header-block">
+            <div class="header-title-meta">
+              <span class="header-code-index">#004</span>
+              <div>
+                <h2 class="section-main-heading">BADGE COLLECTION</h2>
+                <p class="section-sub-heading">HONORARY GYM BADGES, HACKATHON MEDALS &amp; CERTIFICATIONS</p>
+              </div>
+            </div>
+            <div class="header-indicator-pill"><span class="badge-total-pill">6 / 8 BADGES UNLOCKED</span></div>
+          </div>
+
+          <!-- 6 Placeholder Badge Cards in Grid -->
+          <div class="badges-showcase-grid">
+            <!-- Badge 1: Red Flame -->
+            <div class="badge-display-card badge-red-flame">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">🔥</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">CIRCUIT GYM</span>
+                <h3 class="badge-honor-title">[HACKATHON CHAMPION]</h3>
+                <p class="badge-narrative">[Awarded 1st place among 40 collegiate teams for building an AI-driven disaster relief logistics dispatcher.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[OCTOBER 2024]</span></div>
+              </div>
+            </div>
+
+            <!-- Badge 2: Blue Cascade -->
+            <div class="badge-display-card badge-blue-cascade">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">💧</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">CASCADE GYM</span>
+                <h3 class="badge-honor-title">[CORE OSS CONTRIBUTOR]</h3>
+                <p class="badge-narrative">[Authored 25+ merged patches into major open-source web tooling repositories improving memory footprints.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[AUGUST 2024]</span></div>
+              </div>
+            </div>
+
+            <!-- Badge 3: Gold Metallic -->
+            <div class="badge-display-card badge-gold-thunder">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">⚡</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">THUNDER GYM</span>
+                <h3 class="badge-honor-title">[DEAN'S LIST SCHOLAR]</h3>
+                <p class="badge-narrative">[Awarded top 5% academic standing across all computer engineering, algorithms, and mathematics coursework.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[MAY 2024]</span></div>
+              </div>
+            </div>
+
+            <!-- Badge 4: Green Grass -->
+            <div class="badge-display-card badge-green-rainbow">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">🌿</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">RAINBOW GYM</span>
+                <h3 class="badge-honor-title">[CLOUD PRACTITIONER]</h3>
+                <p class="badge-narrative">[Verified professional practitioner in scalable serverless patterns, identity access management, and VPC networks.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[JANUARY 2024]</span></div>
+              </div>
+            </div>
+
+            <!-- Badge 5: Purple Psychic -->
+            <div class="badge-display-card badge-purple-marsh">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">🔮</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">MARSH GYM</span>
+                <h3 class="badge-honor-title">[AI RESEARCH FELLOW]</h3>
+                <p class="badge-narrative">[Selected for university honors laboratory investigating self-supervised representation learning models.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[NOVEMBER 2023]</span></div>
+              </div>
+            </div>
+
+            <!-- Badge 6: Cyan Volcano -->
+            <div class="badge-display-card badge-cyan-volcano">
+              <div class="badge-emblem-wrap"><div class="badge-geometric-hex"><span class="badge-glyph">💎</span></div></div>
+              <div class="badge-body-content">
+                <span class="badge-region-tag">VOLCANO GYM</span>
+                <h3 class="badge-honor-title">[LEAD MENTOR]</h3>
+                <p class="badge-narrative">[Led 20 weeks of beginner coding bootcamps guiding 120+ aspiring engineers through their first web projects.]</p>
+                <div class="badge-timestamp"><span class="ts-icon">📅</span><span class="ts-text">[SEPTEMBER 2023]</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             10. COMMUNICATION TERMINAL SECTION
+             id="contact"
+             EDIT YOUR DETAILS HERE: CONTACT & LINKS
+             ========================================== -->
+        <section id="contact" class="portfolio-section section-terminal">
+          <div class="section-header-block">
+            <div class="header-title-meta">
+              <span class="header-code-index">#005</span>
+              <div>
+                <h2 class="section-main-heading">COMMUNICATION TERMINAL</h2>
+                <p class="section-sub-heading">DIRECT SATELLITE UPLINK &amp; COMMAND PROMPT</p>
+              </div>
+            </div>
+            <div class="header-indicator-pill">
+              <span class="terminal-pulse-beacon" aria-hidden="true"></span>
+              <span>FREQUENCY 142.88 MHz OPEN</span>
+            </div>
+          </div>
+
+          <!-- Terminal Window -->
+          <div class="terminal-shell">
+            <div class="terminal-titlebar">
+              <div class="terminal-control-dots" aria-hidden="true">
+                <span class="terminal-dot dot-close"></span>
+                <span class="terminal-dot dot-minimize"></span>
+                <span class="terminal-dot dot-maximize"></span>
+              </div>
+              <div class="terminal-window-title">ROOT@POKEDEX-CORE: /DEV/UPLINK/TRAINER</div>
+              <div class="terminal-baud-rate">BAUD: 115200 // SSL-ENCRYPTED</div>
+            </div>
+
+            <div class="terminal-screen">
+              <div class="console-line"><span class="c-prompt">SYS&gt;</span><span class="c-text-bright">INITIATING TRANSMISSION... FREQUENCY TUNED TO 142.88 MHz</span></div>
+              <div class="console-line"><span class="c-prompt">TRAINER&gt;</span><span class="c-text-primary">[YOUR NAME] — [YOUR TITLE]</span></div>
+              <div class="console-line"><span class="c-prompt">NOTICE&gt;</span><span class="c-text-muted">Target endpoints available. Select a terminal command below:</span></div>
+
+              <div class="terminal-ascii-divider" aria-hidden="true">-----------------------------------------------------------------------------</div>
+
+              <!-- Terminal Command Links -->
+              <!-- ==========================================
+                   EDIT YOUR DETAILS HERE: CONTACT LINKS
+                   Replace # with real URLs or mailto links
+                   ========================================== -->
+              <div class="terminal-command-links">
+                <a href="#" class="terminal-link-row" title="Send Email Transmission">
+                  <span class="cmd-symbol">&gt;</span><span class="cmd-command">EMAIL_DISPATCH</span><span class="cmd-argument">--recipient="[EMAIL ADDRESS]"</span><span class="cmd-direct-arrow">↗</span>
+                </a>
+                <a href="#" class="terminal-link-row" title="Access GitHub Profile">
+                  <span class="cmd-symbol">&gt;</span><span class="cmd-command">ACCESS_GITHUB</span><span class="cmd-argument">--target="[GITHUB URL]"</span><span class="cmd-direct-arrow">↗</span>
+                </a>
+                <a href="#" class="terminal-link-row" title="Connect on LinkedIn">
+                  <span class="cmd-symbol">&gt;</span><span class="cmd-command">CONNECT_LINKEDIN</span><span class="cmd-argument">--profile="[LINKEDIN URL]"</span><span class="cmd-direct-arrow">↗</span>
+                </a>
+                <a href="#" class="terminal-link-row" title="View Primary Portfolio URL">
+                  <span class="cmd-symbol">&gt;</span><span class="cmd-command">LINK_PORTFOLIO</span><span class="cmd-argument">--host="[PORTFOLIO URL]"</span><span class="cmd-direct-arrow">↗</span>
+                </a>
+              </div>
+
+              <div class="terminal-ascii-divider" aria-hidden="true">-----------------------------------------------------------------------------</div>
+
+              <div class="console-line"><span class="c-prompt">SYS&gt;</span><span class="c-text-accent">READY FOR NEW INCOMING TRANSMISSION</span><span class="terminal-cursor-block" aria-hidden="true"></span></div>
+
+              <div class="terminal-end-barrier">
+                <span class="barrier-diamond">◆</span><span>END TRANSMISSION</span><span class="barrier-diamond">◆</span>
+              </div>
+
+              <div class="terminal-return-bar">
+                <a href="#trainer-profile" class="terminal-return-link"><span class="return-arrow">▲</span><span>Return to Trainer Profile</span></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Footer -->
+          <footer class="pokedex-master-footer" role="contentinfo">
+            <div class="pokeball footer-pokeball-mini" aria-hidden="true"></div>
+            <p class="footer-copyright-line">POKÉDEX SYSTEM v2.0 — All data classified.</p>
+            <p class="footer-tech-note">Designed for Pokémon Trainers &amp; Developers. Pure HTML5 &amp; CSS3.</p>
+          </footer>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
